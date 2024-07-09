@@ -55,6 +55,12 @@ h2 {
     margin: 0 auto;
 }
 
+.row__column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Navigation Bar */
 
 nav {
@@ -349,4 +355,10 @@ header {
 
 #best-selling{
     margin-top: 8vw;
+}
+
+/* Explore */
+
+#explore{
+    background-color: #f2f2f2;
 }
