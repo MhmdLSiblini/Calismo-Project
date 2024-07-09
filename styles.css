@@ -13,6 +13,10 @@ body{
     overflow-x: hidden;
 }
 
+a{
+    text-decoration: none;
+}
+
 img {
     width: 100%;
 }
@@ -59,6 +63,69 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.no-cursor{
+    cursor: not-allowed;
+}
+
+/* Burger Menu */
+
+.btn__menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    display: none;
+}
+
+.menu__backdrop{
+    position: absolute;
+    background-color: #1d1e1e;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease;
+}
+
+.menu--open .menu__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu--open {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.btn__menu--close{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+}
+
+.menu__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list{
+    padding: 32px 0;
+}
+
+.menu__link{
+    font-size: 40px;
+    color: #fff;
 }
 
 /* Navigation Bar */
@@ -205,7 +272,7 @@ header {
 }
 
 .btn:hover{
-    background-color: #E9E4DE;
+    background-color: #1D1E1E;
     color: #ABA944;
     scale: 1.1;
     filter: brightness(85%);
@@ -230,6 +297,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .highlight{
@@ -237,7 +305,6 @@ header {
     width: calc(100% / 3);
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
@@ -262,6 +329,7 @@ header {
 .highlight__subtitle{
     font-size: 20px;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 /* Features */
@@ -361,4 +429,100 @@ header {
 
 #explore{
     background-color: #f2f2f2;
+}
+
+/* Footer */
+
+footer{
+    background-color: #1D1E1E;
+}
+
+.footer__logo{
+    display: flex;
+}
+
+.footer__logo--img{
+    width: 240px;
+}
+
+.footer__link, .footer__copyright{
+    color: #fff;
+}
+
+.footer__links{
+    margin: 48px 0 24px 0;
+}
+
+.footer__link{
+    margin: 0 32px;
+    text-decoration: none;
+    position: relative;
+}
+
+.footer__link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #ABA944;
+    transition: width 0.3s;
+    left: 0;
+    bottom: 0px;
+}
+
+.footer__link:hover::after {
+    width: 100%;
+}
+
+@media (max-width:768px){
+.logo{
+    width: 200px;
+}
+
+.nav__link{
+    font-size: 16px;
+}
+
+h1{
+    font-size: 48px;
+}
+
+h2{
+    font-size: 26px;
+}
+
+.btn{
+   font-size: 20px;
+   padding: 14px 20px;
+}
+
+.equipment{
+    width: 50%;
+}
+
+.footer__logo--img{
+    width: 200px;
+}
+}
+
+
+
+/* Burger Menu and Highlight*/
+@media (max-width: 665px) {
+    .nav__links{
+        display: none;
+    }
+
+    .btn__menu{
+        display: block;
+    }
+
+    .highlight{
+        width: 100%;
+    }
+
+    .highlight:not(:last-child) {
+        margin-bottom: 24px;
+    }
 }
